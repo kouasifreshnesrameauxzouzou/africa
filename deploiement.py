@@ -6,8 +6,8 @@ import plotly.graph_objects as go
 import seaborn as sns
 from matplotlib import pyplot as plt
 
-# Charger les données
-@st.cache
+# Charger les données avec la nouvelle méthode de mise en cache
+@st.cache_data
 def load_data():
     data = pd.read_csv('Africa_climate_change.csv')
     data['DATE'] = pd.to_datetime(data['DATE'], format='%Y%m%d %H%M%S')
